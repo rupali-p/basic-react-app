@@ -1,9 +1,19 @@
 import React from 'react';
 import "./style.css";
+import Action from "./actions";
+import Progress from "./progress"
+
 
 function timer() {
     return (
-        <div>timer</div>
+        <div className='timer' >
+            <Progress>
+
+            </Progress>
+            <Action>
+
+            </Action>
+        </div>
     )
 }
 
