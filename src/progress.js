@@ -2,7 +2,7 @@ import React from 'react'
 
 function progress() {
     return (
-        <div>progress</div>
+        <div className='pg-container'>Progress</div>
     )
 }
 
