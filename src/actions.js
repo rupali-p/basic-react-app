@@ -1,19 +1,22 @@
 import React from 'react'
 
-function actions() {
+function Actions({ toggleForm, onToggle, timeInput, handleChange, countDownStarted, startTimer, stopTimer }) {
     return (
         <div className='ac-container'>
             <div className='btn-container'>
-                <button>Start</button>
-                <button>Set Time</button>
+                {!countDownStarted ? <button onClick={() => startTimer()}>Start</button> :
+                    <button onClick={() => stopTimer()}>Stop</button>}
+                <button onClick={onToggle}>Set Time</button>
             </div>
-            {/* <div className='btn-container'>
-                
-            </div> */}
+            {toggleForm ?
+                <div className='input-form'>
+                    <input type="number" placeholder='Please enter time...'
+                        onChange={handleChange}
+                        defaultValue={timeInput}
+                    ></input>
 
-            <form>
-                <input type="text" placeholder='please enter time'></input>
-            </form>
+                </div> : null
+            }
             <div className='used-container'>
                 <div className='used-timers'>
                     <h2>Most used timers</h2>
@@ -43,7 +46,6 @@ function actions() {
                 </div>
                 <div className='reset'>
                     <button>Clear</button>
-
                 </div>
             </div>
 
@@ -51,4 +53,4 @@ function actions() {
     )
 }
 
-export default actions;
+export default Actions;
